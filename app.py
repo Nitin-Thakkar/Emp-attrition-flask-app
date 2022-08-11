@@ -197,7 +197,7 @@ def insertDatas():
 def viewData():
     connection = db_connect()
     cursor1 = connection.cursor()
-    cursor1.execute("select * from finalproject LIMIT 10")
+    cursor1.execute("select * from finalproject")
     searchData = cursor1.fetchall()
     # prsearchData)
     # print(searchData)
