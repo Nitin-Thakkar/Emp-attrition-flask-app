@@ -1,0 +1,79 @@
+<html>
+
+<head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', { 'packages': ['bar'] });
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+        google.charts.setOnLoadCallback(drawCharpie);
+
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                {% for k, v in data.items() %}
+        {% if v is string %}
+        ['{{ k }}', '{{ v }}'],
+            {% else %}
+        ['{{ k }}', {{ v }}],
+            {% endif %}
+        {% endfor %}
+          ]);
+        // ['Year', 'Sales', 'Expenses'],
+        // ['2013', 1000, 400],
+        // ['2014', 1170, 460],
+        // ['2015', 660, 1120],
+        // ['2016', 1030, 540]
+
+
+        var options = {
+            chart: {
+                title: 'Total Employee By Department',
+                subtitle: 'Employee Count',
+            },
+            bars: 'Verticle' // Required for Material Bar Charts.
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('barchart_material'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
+
+      function drawCharpie() {
+            var data1 = google.visualization.arrayToDataTable([
+                {% for k, v in data.items() %}
+        {% if v is string %}
+        ['{{ k }}', '{{ v }}'],
+            {% else %}
+        ['{{ k }}', {{ v }}],
+            {% endif %}
+        {% endfor %}
+          ]);
+        // ['Year', 'Sales', 'Expenses'],
+        // ['2013', 1000, 400],
+        // ['2014', 1170, 460],
+        // ['2015', 660, 1120],
+        // ['2016', 1030, 540]
+
+
+        var options = {
+          title: 'Employees By Department'
+        };
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data1, options);
+      }
+    </script>
+</head>
+
+<body>
+    {% include 'header.html' %}
+    <div>
+    <table>
+        <td><div id="barchart_material" style="width: 900px; height: 500px;"></div></td>
+        <td><div id="piechart" style="width: 900px; height: 500px;"></div></td>
+    </table>
+</div>
+    {% include 'footer.html' %}
+</body>
+
+</html>

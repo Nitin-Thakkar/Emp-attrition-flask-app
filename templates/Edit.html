@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="aNonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="aNonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+            integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+            crossorigin="aNonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+            integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+            crossorigin="aNonymous"></script>
+
+
+</head>
+<body>
+
+{% include 'header.html' %}
+
+
+<form action="/updateData" method="post">
+
+    {% for i in data %}
+
+
+    <div class="container" style="border:1px solid black;text-align:center">
+        <div class="row">
+            <div class="col-6 col-sm-6">
+
+                <div class="form-group">
+                    <label style="margin:30px 0px 0px;font-size:20px;font-style:italic;"
+                           for="exampleInputEmail1">Age</label>
+                    <input type="text" name="Age" value="{{i['Age']}}" class="form-control" id="exampleInputEmail1"
+                           aria-describedby="emailHelp"
+                           placeholder="Enter Age">
+
+                </div>
+
+                <div class="form-group">
+                    <label style="margin:30px 0px 0px;font-size:20px;font-style:italic;"
+                           for="exampleInputEmail1">Gender</label>
+
+                    {% if i['Gender']=='Male' %}
+
+                    <div class="form-group">
+                        Male <input class="form-check-input" type="radio" name="Gender" id="radioNoLabel1" value="Male"
+                                    aria-label="..." checked >
+                        <div style="margin:0px 0px 0px;float:left"></div>
+
+                        Female <input style="margin:0px 0px 0px; class=" form-check-input" type="radio" name="Gender"
+                        id="radioNoLabel1" value="Female"
+                        aria-label="...">
+                    </div>
+
+                    {% endif %}
+
+                    {% if i['Gender']=='Female' %}
+
+                    <div class="form-group">
+                        Male <input class="form-check-input" type="radio" name="Gender" id="radioNoLabel1" value="Male"
+                                    aria-label="..."  >
+                        <div style="margin:0px 0px 0px;float:left"></div>
+
+                        Female <input style="margin:0px 0px 0px; class=" form-check-input" type="radio" name="Gender"
+                        id="radioNoLabel1" value="Female"
+                        aria-label="..." checked>
+                    </div>
+
+                    {% endif %}
+
+
+
+                </div>
+
+
+                <div class="form-group">
+                    <label style="margin:30px 0px 0px;font-size:20px;font-style:italic;"
+                           for="exampleFormControlSelect1">Attrition</label>
+                    <select class="form-control" name="Attrition" id="">
+                        <option selected>Choose...</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label style="margin:30px 0px 0px;font-size:20px;font-style:italic;"
+                           for="exampleFormControlSelect1">MaritalStatus</label>
+                    <select class="form-control" name="MaritalStatus" id="exampleFormControlSelect1">
+                        <option selected>Choose...</option>
+                        <option value="Divorced">Divorced</option>
+                        <option value="Married">Married</option>
+                        <option value="Single">Single</option>
+
+                    </select>
+                </div>
+
+
+                <div class="form-group">
+                    <label style="margin:30px 0px 0px;font-size:20px;font-style:italic;"
+                           for="exampleFormControlSelect1">Department</label>
+                    <select class="form-control" name="Department">
+                        <option selected>Choose...</option>
+                        <option value="Sales">Sales</option>
+                        <option value="Research & Development">Research & Development</option>
+                        <option value="Human Resources">Non-Human Resources</option>
+
+                    </select>
+                </div>
+
+
+                <div class="form-group">
+                    <label style="margin:30px 0px 0px;font-size:20px;font-style:italic;"
+                           for="exampleFormControlSelect1">Education</label>
+                    <select class="form-control" name="Education">
+                        <option selected>Choose...</option>
+                        <option value="Below College">Below College</option>
+                        <option value="College">College</option>
+                        <option value="Bachelor">Bachelor</option>
+                        <option value="Master">Master</option>
+                        <option value="Doctor">Doctor</option>
+
+                    </select>
+                </div>
+
+
+                <div class="form-group">
+                    <label style="margin:30px 0px 0px;font-size:20px;font-style:italic;"
+                           for="exampleFormControlSelect1">EnvironmentSatisfaction</label>
+                    <select class="form-control" name="EnvironmentSatisfaction">
+                        <option selected>Choose...</option>
+                        <option value="Low">Low</option>
+                        <option value="Medium">Medium</option>
+                        <option value="High">High</option>
+                        <option value="Very High">Very High</option>
+
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label style="margin:30px 0px 0px;font-size:20px;font-style:italic;"
+                           for="exampleFormControlSelect1">JobLevel</label>
+                    <select class="form-control" name="JobLevel">
+                        <option selected>Choose...</option>
+                        <option value="Level 1">Level 1</option>
+                        <option value="Level 2">Level 2</option>
+                        <option value="Level 3">Level 3</option>
+                        <option value="Level 4">Level 4</option>
+                        <option value="Level 5">Level 5</option>
+
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label style="margin:30px 0px 0px;font-size:20px;font-style:italic;"
+                           for="exampleFormControlSelect1">JobSatisfaction</label>
+                    <select class="form-control" name="JobSatisfaction">
+                        <option selected>Choose...</option>
+                        <option value="Low">Low</option>
+                        <option value="Medium">Medium</option>
+                        <option value="High">High</option>
+                        <option value="Very High">Very High</option>
+
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label style="margin:30px 0px 0px;font-size:20px;font-style:italic;" for="exampleInputEmail1">PercentSalaryHike</label>
+                    <input type="text" name="PercentSalaryHike" value="{{i['PercentSalaryHike']}}" class="form-control" id="exampleInputEmail1"
+                           aria-describedby="emailHelp"
+                           placeholder="Enter PercentSalaryHike">
+
+                </div>
+
+                <div class="form-group">
+                    <label style="margin:30px 0px 0px;font-size:20px;font-style:italic;"
+                           for="exampleFormControlSelect1">RelationshipSatisfaction</label>
+                    <select class="form-control" name="RelationshipSatisfaction">
+                        <option selected>Choose...</option>
+                        <option value="Low">Low</option>
+                        <option value="Medium">Medium</option>
+                        <option value="High">High</option>
+                        <option value="Very High">Very High</option>
+
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label style="margin:30px 0px 0px;font-size:20px;font-style:italic;"
+                           for="exampleFormControlSelect1">StockOptionLevel</label>
+                    <select class="form-control" name="StockOptionLevel">
+                        <option selected>Choose...</option>
+                        <option value="Level 0">Level 0</option>
+                        <option value="Level 1">Level 1</option>
+                        <option value="Level 2">Level 2</option>
+                        <option value="Level 3">Level 3</option>
+
+
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label style="margin:30px 0px 0px;font-size:20px;font-style:italic;"
+                           for="exampleFormControlSelect1">WorkLifeBalance</label>
+                    <select class="form-control" name="WorkLifeBalance">
+                        <option selected>Choose...</option>
+                        <option value="Bad">Bad</option>
+                        <option value="Good">Good</option>
+                        <option value="Better">Better</option>
+                        <option value="Best">Best</option>
+
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label style="margin:30px 0px 0px;font-size:20px;font-style:italic;" for="exampleInputEmail1">YearsAtCompany</label>
+                    <input type="text" name="YearsAtCompany" value="{{i['YearsAtCompany']}}" class="form-control" id="exampleInputEmail1"
+                           aria-describedby="emailHelp"
+                           placeholder="Enter YearsAtCompany">
+
+                </div>
+
+
+                <div class="form-group">
+                    <label style="margin:30px 0px 0px;font-size:20px;font-style:italic;" for="exampleInputEmail1">YearsInCurrentRole</label>
+                    <input type="text" name="YearsInCurrentRole" value="{{i['YearsInCurrentRole']}}" class="form-control" id="exampleInputEmail1"
+                           aria-describedby="emailHelp"
+                           placeholder="Enter YearsInCurrentRole">
+
+                </div>
+
+
+            </div>
+
+
+            <!--sdddddddddddddddddddddddddd-->
+
+            <div class="col-6 col-sm-6">
+
+                <div class="form-group">
+                    <label style="margin:30px 0px 0px;font-size:20px;font-style:italic;"
+                           for="exampleFormControlSelect1">BusinessTravel</label>
+                    <select class="form-control" name="BusinessTravel">
+                        <option selected>Choose...</option>
+                        <option value="Travel_Frequently">Travel_Frequently</option>
+                        <option value="Travel_Rarely">Travel_Rarely</option>
+                        <option value="Non-Travel">Non-Travel</option>
+
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label style="margin:30px 0px 0px;font-size:20px;font-style:italic;" for="exampleInputEmail1">DailyRate</label>
+                    <input type="text" name="DailyRate" value="{{i['DailyRate']}}" class="form-control" id="" aria-describedby="emailHelp"
+                           placeholder="Enter DailyRate">
+
+                </div>
+
+                <div class="form-group">
+                    <label style="margin:30px 0px 0px;font-size:20px;font-style:italic;" for="exampleInputEmail1">DistanceFromHome</label>
+                    <input type="text" name="DistanceFromHome" value="{{i['DistanceFromHome']}}" class="form-control" id="exampleInputEmail1"
+                           aria-describedby="emailHelp"
+                           placeholder="Enter DistanceFromHome">
+
+                </div>
+
+
+                <div class="form-group">
+                    <label style="margin:30px 0px 0px;font-size:20px;font-style:italic;"
+                           for="exampleFormControlSelect1">EducationField</label>
+                    <select class="form-control" name="EducationField">
+                        <option selected>Choose...</option>
+                        <option value="Life Sciences">Life Sciences</option>
+                        <option value="Medical">Medical</option>
+                        <option value="Marketing">Marketing</option>
+                        <option value="Technical Degree">Technical Degree</option>
+                        <option value="Human Resources">Human Resources</option>
+                        <option value="Other">Other</option>
+
+                    </select>
+                </div>
+
+
+
+                <div class="form-group">
+                    <label style="margin:30px 0px 0px;font-size:20px;font-style:italic;" for="exampleInputEmail1">HourlyRate</label>
+                    <input type="text" name="HourlyRate" value="{{i['HourlyRate']}}" class="form-control" id="exampleInputEmail1"
+                           aria-describedby="emailHelp"
+                           placeholder="Enter HourlyRate">
+
+                </div>
+
+                <div class="form-group">
+                    <label style="margin:30px 0px 0px;font-size:20px;font-style:italic;"
+                           for="exampleFormControlSelect1">JobInvolvement</label>
+                    <select class="form-control" name="JobInvolvement">
+                        <option selected>Choose...</option>
+                        <option value="Low">Low</option>
+                        <option value="Medium">Medium</option>
+                        <option value="High">High</option>
+                        <option value="Very High">Very High</option>
+
+                    </select>
+                </div>
+
+
+                <div class="form-group">
+                    <label style="margin:30px 0px 0px;font-size:20px;font-style:italic;"
+                           for="exampleFormControlSelect1">JobRole</label>
+                    <select class="form-control" name="JobRole">
+                        <option selected>Choose...</option>
+                        <option value="Healthcare Representative">Healthcare Representative</option>
+                        <option value="Research Scientist">Research Scientist</option>
+                        <option value="Human Resources">Human Resources</option>
+                        <option value="Sales Executive">Sales Executive</option>
+                        <option value="Research Director">Research Director</option>
+                        <option value="Laboratory Technician">Laboratory Technician</option>
+                        <option value="Manufacturing Director">Manufacturing Director</option>
+                        <option value="Sales Representative">Sales Representative</option>
+                        <option value="Manager">Manager</option>
+
+                    </select>
+                </div>
+
+
+                <div class="form-group">
+                    <label style="margin:30px 0px 0px;font-size:20px;font-style:italic;" for="exampleInputEmail1">MonthlyIncome</label>
+                    <input type="text" name="MonthlyIncome" value="{{i['MonthlyIncome']}}" class="form-control" id="exampleInputEmail1"
+                           aria-describedby="emailHelp"
+                           placeholder="Enter MonthlyIncome">
+
+                </div>
+
+
+                <div class="form-group">
+                    <label style="margin:30px 0px 0px;font-size:20px;font-style:italic;" for="exampleInputEmail1">NumCompaniesWorked</label>
+                    <input type="text" name="NumCompaniesWorked" value="{{i['NumCompaniesWorked']}}" class="form-control" id="exampleInputEmail1"
+                           aria-describedby="emailHelp"
+                           placeholder="Enter NumCompaniesWorked">
+
+                </div>
+
+                <div class="form-group">
+                    <label style="margin:30px 0px 0px;font-size:20px;font-style:italic;"
+                           for="exampleFormControlSelect1">OverTime</label>
+                    <select class="form-control" name="OverTime" id="">
+                        <option selected>Choose...</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+
+
+                <div class="form-group">
+                    <label style="margin:30px 0px 0px;font-size:20px;font-style:italic;"
+                           for="exampleFormControlSelect1">PerformanceRating</label>
+                    <select class="form-control" name="PerformanceRating">
+                        <option selected>Choose...</option>
+                        <option value="Low">Low</option>
+                        <option value="Good">Good</option>
+                        <option value="Excellent">Excellent</option>
+                        <option value="Outstanding">Outstanding</option>
+
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label style="margin:30px 0px 0px;font-size:20px;font-style:italic;" for="exampleInputEmail1">Total
+                        WorkingYears</label>
+                    <input type="text" name="TotalWorkingYears" value="{{i['TotalWorkingYears']}}" class="form-control" id="exampleInputEmail1"
+                           aria-describedby="emailHelp"
+                           placeholder="Enter Total WorkingYears">
+
+                </div>
+
+                <div class="form-group">
+                    <label style="margin:30px 0px 0px;font-size:20px;font-style:italic;" for="exampleInputEmail1">TrainingTimesLastYear</label>
+                    <input type="text" name="TrainingTimesLastYear" value="{{i['TrainingTimesLastYear']}}" class="form-control" id="exampleInputEmail1"
+                           aria-describedby="emailHelp"
+                           placeholder="Enter TrainingTimesLastYear">
+
+                </div>
+
+                <div class="form-group">
+                    <label style="margin:30px 0px 0px;font-size:20px;font-style:italic;" for="exampleInputEmail1">YearsSinceLastPromotion</label>
+                    <input type="text" name="YearsSinceLastPromotion" value="{{i['YearsSinceLastPromotion']}}" class="form-control" id="exampleInputEmail1"
+                           aria-describedby="emailHelp"
+                           placeholder="Enter YearsSinceLastPromotion">
+
+                </div>
+                <div class="form-group">
+                    <label style="margin:30px 0px 0px;font-size:20px;font-style:italic;" for="exampleInputEmail1">YearsWithCurrManager</label>
+                    <input type="text" name="YearsWithCurrManager" value="{{i['YearsWithCurrManager']}}" class="form-control" id="exampleInputEmail1"
+                           aria-describedby="emailHelp"
+                           placeholder="Enter YearsWithCurrManager">
+
+                </div>
+
+
+            </div>
+
+             <input type="text" name="id" value="{{ i['id'] }}">
+            <input type="hidden" name="EmployeeNumber" value="{{i['EmployeeNumber']}}">
+
+
+            <button type="submit" style="margin : 10px 0px 0px" class="btn btn-primary">Submit</button>
+            <button style="margin : 10px 0px 0px" class="btn btn-primary" onclick="history.back()">Go Back</button>
+            <!-- Force next columns to break to new line -->
+
+        </div>
+    </div>
+    {% endfor %}
+
+</form>
+</body>
+</html>

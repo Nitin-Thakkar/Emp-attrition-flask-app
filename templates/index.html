@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Index</title>
+
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+
+    body {
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    /* CSS for header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #f5f5f5;
+    }
+
+    .header .logo {
+      font-size: 25px;
+      font-family: 'Sriracha', cursive;
+      color: #000;
+      text-decoration: none;
+      margin-left: 30px;
+    }
+
+    .nav-items {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      background-color: #f5f5f5;
+      margin-right: 20px;
+    }
+
+    .nav-items a {
+      text-decoration: none;
+      color: #000;
+      padding: 35px 20px;
+    }
+
+    /* CSS for main section */
+    .intro {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 520px;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url("https://9series.com/blog/wp-content/uploads/2018/09/Employee-Attrition-and-Retention-Part-1.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .intro h1 {
+      font-family: sans-serif;
+      font-size: 60px;
+      color: #fff;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    .intro p {
+      font-size: 20px;
+      color: #d1d1d1;
+      text-transform: uppercase;
+      margin: 20px 0;
+    }
+
+    .intro button {
+      background-color: #5edaf0;
+      color: #000;
+      padding: 10px 25px;
+      border: none;
+      border-radius: 5px;
+      font-size: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.4)
+    }
+
+    .achievements {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 40px 80px;
+    }
+
+    .achievements .work {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 0 40px;
+    }
+
+    .achievements .work i {
+      width: fit-content;
+      font-size: 50px;
+      color: #333333;
+      border-radius: 50%;
+      border: 2px solid #333333;
+      padding: 12px;
+    }
+
+    .achievements .work .work-heading {
+      font-size: 20px;
+      color: #333333;
+      text-transform: uppercase;
+      margin: 10px 0;
+    }
+
+    .achievements .work .work-text {
+      font-size: 15px;
+      color: #585858;
+      margin: 10px 0;
+    }
+
+    .about-me {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 80px;
+      border-top: 2px solid #eeeeee;
+    }
+
+    .about-me img {
+      width: 500px;
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .about-me-text h2 {
+      font-size: 30px;
+      color: #333333;
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    .about-me-text p {
+      font-size: 15px;
+      color: #585858;
+      margin: 10px 0;
+    }
+
+    /* CSS for footer */
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #302f49;
+      padding: 40px 80px;
+    }
+
+    .footer .copy {
+      color: #fff;
+    }
+
+    .bottom-links {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 40px 0;
+    }
+
+    .bottom-links .links {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 0 40px;
+    }
+
+    .bottom-links .links span {
+      font-size: 20px;
+      color: #fff;
+      text-transform: uppercase;
+      margin: 10px 0;
+    }
+
+    .bottom-links .links a {
+      text-decoration: none;
+      color: #a1a1a1;
+      padding: 10px 20px;
+    }
+  </style>
+
+</head>
+
+<body>
+  {% include 'header.html' %}
+
+  <main>
+    <div class="intro">
+      <h1>Human Resource</h1>
+      <p>Good Employees are your assets.</p>
+      <button>Learn More</button>
+    </div>
+    <div class="achievements">
+      <div class="work">
+        <i class="fas fa-atom"></i>
+        <p class="work-heading">Project</p>
+        <p class="work-text">This is the Employee Attrition Project which is basically useful for Human resource
+          deparment for analize purpose. </p>
+      </div>
+      <div class="work">
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <img
+          src="https://media.istockphoto.com/photos/get-planning-to-get-ahead-picture-id1296272795?k=20&m=1296272795&s=612x612&w=0&h=z4CFX551J_Fec-0_myh9Mk7wcyMyUsyw4JOf1BEAnSk="
+          alt="me" style="width:80%;margin-right: 50%;">
+      </div>
+
+
+    </div>
+    <div class="achievements">
+      <div class="work">
+        <i class="fas fa-skiing"></i>
+        <p class="work-heading">Skills</p>
+        <p class="work-text">The ability to communicate, analyze and stay organized, among other skills, will set you apart in information technology. Do you have what it takes to succeed in IT? Yes, you probably do.</p>
+      </div>
+      <div class="work">
+        <img src="https://content.techgig.com/img/66678129/Master.jpg?resizemode=4&width=400"
+          style="width:80%;margin-right: 80%;">
+      </div>
+    </div>
+    <div class="achievements">
+      <div class="work">
+        <i class="fas fa-ethernet"></i>
+        <p class="work-heading">Satisfaction</p>
+        <p class="work-text"><b>Our 80% of clients are satisfied with our Analysis which help them to grow their
+            business.</b></p>
+      </div>
+      <div class="work">
+        <img
+          src="https://media.istockphoto.com/vectors/customer-review-rating-different-people-give-review-rating-and-vector-id1170730064?k=20&m=1170730064&s=612x612&w=0&h=pimOwkp88Q6ZQ96XDbqbgwziZA629sOFr5-r88sxM3c="
+          style="width:80%;margin-right: 50%;">
+      </div>
+
+    </div>
+    <div class="about-me">
+      <div class="about-me-text">
+        <h2>About Us</h2>
+        <p>Software Engineering is at the heart of everything we do. We harness the power of engineering to create a
+          better world. We are a Digital Enterprise navigating brands towards the future and helping them accelerate
+          their Digital Transformation journey.
+
+          With our Consulting prowess, On-Ground presence in 15 countries and Domain Knowledge acquired over Two
+          Decades, we create Unique Digital Solutions to optimize Customer’s Business Models resulting in Better
+          Performance and Greater Customer Delight.
+          Our clients call us the One-Stop Solution Provider as we pursue excellence and provide:
+
+        <ul>
+          <li>Commitment towards customer success</li>
+          <li>Combination of technology and domain expertise</li>
+          <li>Adoption and continuous improvisation of our software development practices</li>
+          <li>Consistent upgradation and training of our team by experts to understand the criticalities and reduce the
+            cultural gap</li>
+        </ul>
+        </p>
+      </div>
+      <img src="https://itartificer.com/wp-content/uploads/2019/01/website-development.jpg" alt="me">
+    </div>
+  </main>
+  {% include 'footer.html' %}
+</body>
+
+</html>
